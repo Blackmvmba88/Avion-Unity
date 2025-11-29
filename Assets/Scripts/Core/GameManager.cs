@@ -180,7 +180,7 @@ namespace AvionUnity.Core
             var rb = playerAircraft.GetComponent<Rigidbody>();
             if (rb != null)
             {
-                rb.linearVelocity = Vector3.zero;
+                rb.velocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;
             }
 

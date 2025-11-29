@@ -152,7 +152,7 @@ namespace AvionUnity.UI
                 Rigidbody rb = aircraft.GetComponent<Rigidbody>();
                 if (rb != null)
                 {
-                    float verticalSpeed = rb.linearVelocity.y;
+                    float verticalSpeed = rb.velocity.y;
                     string direction = verticalSpeed >= 0 ? "↑" : "↓";
                     
                     if (useMetricUnits)
@@ -267,10 +267,10 @@ namespace AvionUnity.UI
                 Rigidbody rb = aircraft.GetComponent<Rigidbody>();
                 if (rb != null)
                 {
-                    Vector3 acceleration = (rb.linearVelocity - previousVelocity) / Time.deltaTime;
+                    Vector3 acceleration = (rb.velocity - previousVelocity) / Time.deltaTime;
                     gForce = Mathf.Lerp(gForce, (acceleration.magnitude / 9.81f) + 1f, Time.deltaTime * 5f);
                     gForceText.text = $"G: {gForce:F1}";
-                    previousVelocity = rb.linearVelocity;
+                    previousVelocity = rb.velocity;
                 }
             }
 

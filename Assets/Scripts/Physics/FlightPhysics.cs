@@ -37,7 +37,7 @@ namespace AvionUnity.Physics
 
         private void FixedUpdate()
         {
-            velocity = rb.linearVelocity;
+            velocity = rb.velocity;
             airspeed = velocity.magnitude;
 
             ApplyAerodynamicForces();
